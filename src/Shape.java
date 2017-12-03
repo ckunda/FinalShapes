@@ -1,8 +1,14 @@
 
-public interface Shape {
+public abstract class Shape {
 
-	void calculateArea();
-	float getArea();
-	Object getValue();
+	protected float area;
 
+	public float getArea() { calculateArea(); return area; }
+	public String toString() {
+		String className = this.getClass().getSimpleName();
+		return String.format("Area of %s with %s is %s.",
+				className, getParmsString(), getArea());
+	}
+	public abstract void calculateArea();
+	public abstract String getParmsString();
 }

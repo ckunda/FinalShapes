@@ -37,17 +37,5 @@ public class Main {
 		Shape triangle = new Triangle(5.0f, 5.0f);
 		triangle.calculateArea();
 		System.out.println(triangle.toString());
-
-		System.out.println("");
-		printShape(square);
-		printShape(circle);
-		printShape(rectangle);
-		printShape(triangle);
-	}
-
-	// Another way to print any Shape
-	public static void printShape(Shape s) {
-		String className = s.getClass().getSimpleName();
-		System.out.println("Area of " + className + s.getValue());
 	}
 }

@@ -1,7 +1,17 @@
+/**
+ * State Diagram
+ * 
+ * Square() -> s0
+ * Square(length) -> s0
+ * Square(Square s) -> s0
+ *
+ * s0: calculateArea() -> s1
+ * s1: getParmsString() -> s(terminal)
+ *
+ */
+public class Square extends Shape {
 
-public class Square implements Shape {
-
-	private float length, area;
+	private float length;
 
 	public Square() { }
 	public Square(float l) { length = l; }
@@ -11,19 +21,9 @@ public class Square implements Shape {
 	
 	@Override
 	public void calculateArea() { area = length * length; }
-	
-	@Override
-	public float getArea() { calculateArea(); return area; }
 
 	@Override
-	public Object getValue() {
-		return String.format(" with Sides Length = %s is %s.",
-				length, getArea());
-	}
-
-	@Override
-	public String toString() {
-		return String.format("Area of Square with Sides Length = %s is %s.",
-				length, getArea());
+	public String getParmsString() {
+		return String.format("Length = %s", length);
 	}
 }

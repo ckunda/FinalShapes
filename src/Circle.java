@@ -1,27 +1,29 @@
+/**
+ * State Diagram
+ * 
+ * Circle() -> s0
+ * Circle(radius) -> s0
+ * Circle(Circle c) -> s0
+ *
+ * s0: calculateArea() -> s1
+ * s1: getParmsString() -> s(terminal)
+ *
+ */
+public class Circle extends Shape {
 
-public class Circle implements Shape {
-
-	private float radius, area;
+	private float radius;
 
 	public Circle() { }
-	public Circle(float l) { radius = l; }
-	public Circle(Circle c) { radius = c.getLength(); }
-	public void setLength(float l) { radius = l; }
-	public float getLength() { return radius; }
-	
-	@Override
-	public void calculateArea() { area = (float) (Math.PI * radius * radius); }
+	public Circle(float r) { radius = r; }
+	public Circle(Circle c) { radius = c.getRadius(); }
+	public void setRadius(float r) { radius = r; }
+	public float getRadius() { return radius; }
 
 	@Override
-	public float getArea() { calculateArea(); return area; }
+	public void calculateArea()
+	{ area = (float) (Math.PI * radius * radius); }
 
 	@Override
-	public Object getValue() {
-		return String.format(" with Radius = %s is %s.", radius, getArea());
-	}
-
-	@Override
-	public String toString() {
-		return String.format("Area of Circle with Radius = %s is %s.", radius, getArea());
-	}
+	public String getParmsString()
+	{ return String.format("Radius = %s", radius); }
 }

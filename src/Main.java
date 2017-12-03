@@ -24,19 +24,25 @@ public class Main {
 
 		Shape square = new Square(5.0f);
 		square.calculateArea();
-		System.out.println(square.getValue());
+		System.out.println(square.toString());
 
 		Shape circle = new Circle(5.0f);
 		circle.calculateArea();
-		System.out.println(circle.getValue());
+		System.out.println(circle.toString());
 
 		Shape rectangle = new Rectangle(5.0f, 5.0f);
 		rectangle.calculateArea();
-		System.out.println(rectangle.getValue());
+		System.out.println(rectangle.toString());
 
 		Shape triangle = new Triangle(5.0f, 5.0f);
 		triangle.calculateArea();
-		System.out.println(triangle.getValue());
+		System.out.println(triangle.toString());
+
+		System.out.println("");
+		printShape(square);
+		printShape(circle);
+		printShape(rectangle);
+		printShape(triangle);
 	}
 
 	// Another way to print any Shape

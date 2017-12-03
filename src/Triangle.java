@@ -18,18 +18,13 @@ public class Triangle implements Shape {
 	public float getArea() { return area; }
 
 	@Override
-	public Object getValue() { return this.toString(); }
+	public Object getValue() {
+		return String.format(" with Height = %s and Base = %s is %s.",
+				height, base, area);	}
 
 	@Override
 	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("Area of Triangle with Height = ");
-		builder.append(height);
-		builder.append(" and Base = ");
-		builder.append(base);
-		builder.append(" is ");
-		builder.append(area);
-		builder.append(".");
-		return builder.toString();
+		return String.format("Area of Triangle with Height = %s and Base = %s is %s.",
+				height, base, area);
 	}
 }

@@ -16,7 +16,9 @@ public class Square implements Shape {
 	public float getArea() { return area; }
 
 	@Override
-	public Object getValue() { return this.toString(); }
+	public Object getValue() {
+		return String.format(" with Sides Length = %s is %s.", length, area);
+	}
 
 	@Override
 	public String toString() {

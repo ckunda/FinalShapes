@@ -16,7 +16,9 @@ public class Circle implements Shape {
 	public float getArea() { return area; }
 
 	@Override
-	public Object getValue() { return this.toString(); }
+	public Object getValue() {
+		return String.format(" with Radius = %s is %s.", radius, area);
+	}
 
 	@Override
 	public String toString() {

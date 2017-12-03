@@ -18,18 +18,13 @@ public class Rectangle implements Shape {
 	public float getArea() { return area; }
 
 	@Override
-	public Object getValue() { return this.toString(); }
-
+	public Object getValue() {
+		return String.format(" with Length = %s and Width = %s is %s.",
+				length, width, area);
+	}
 	@Override
 	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("Area of Rectange with Length = ");
-		builder.append(length);
-		builder.append(" and Width = ");
-		builder.append(width);
-		builder.append(" is ");
-		builder.append(area);
-		builder.append(".");
-		return builder.toString();
+		return String.format("Area of Rectangle with Length = %s and Width = %s is %s.",
+				length, width, area);
 	}
 }

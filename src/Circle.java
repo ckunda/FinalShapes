@@ -13,15 +13,15 @@ public class Circle implements Shape {
 	public void calculateArea() { area = (float) (Math.PI * radius * radius); }
 
 	@Override
-	public float getArea() { return area; }
+	public float getArea() { calculateArea(); return area; }
 
 	@Override
 	public Object getValue() {
-		return String.format(" with Radius = %s is %s.", radius, area);
+		return String.format(" with Radius = %s is %s.", radius, getArea());
 	}
 
 	@Override
 	public String toString() {
-		return String.format("Area of Circle with Radius = %s is %s.", radius, area);
+		return String.format("Area of Circle with Radius = %s is %s.", radius, getArea());
 	}
 }

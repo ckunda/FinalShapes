@@ -15,16 +15,17 @@ public class Triangle implements Shape {
 	public void calculateArea() { area = height * base / 2.0f; }
 
 	@Override
-	public float getArea() { return area; }
+	public float getArea() { calculateArea(); return area; }
 
 	@Override
 	public Object getValue() {
 		return String.format(" with Height = %s and Base = %s is %s.",
-				height, base, area);	}
+				height, base, getArea());
+	}
 
 	@Override
 	public String toString() {
 		return String.format("Area of Triangle with Height = %s and Base = %s is %s.",
-				height, base, area);
+				height, base, getArea());
 	}
 }

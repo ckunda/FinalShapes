@@ -13,15 +13,17 @@ public class Square implements Shape {
 	public void calculateArea() { area = length * length; }
 	
 	@Override
-	public float getArea() { return area; }
+	public float getArea() { calculateArea(); return area; }
 
 	@Override
 	public Object getValue() {
-		return String.format(" with Sides Length = %s is %s.", length, area);
+		return String.format(" with Sides Length = %s is %s.",
+				length, getArea());
 	}
 
 	@Override
 	public String toString() {
-		return String.format("Area of Square with Sides Length = %s is %s.", length, area);
+		return String.format("Area of Square with Sides Length = %s is %s.",
+				length, getArea());
 	}
 }

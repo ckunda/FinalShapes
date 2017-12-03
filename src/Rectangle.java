@@ -15,16 +15,16 @@ public class Rectangle implements Shape {
 	public void calculateArea() { area = length * width; }
 
 	@Override
-	public float getArea() { return area; }
+	public float getArea() { calculateArea(); return area; }
 
 	@Override
 	public Object getValue() {
 		return String.format(" with Length = %s and Width = %s is %s.",
-				length, width, area);
+				length, width, getArea());
 	}
 	@Override
 	public String toString() {
 		return String.format("Area of Rectangle with Length = %s and Width = %s is %s.",
-				length, width, area);
+				length, width, getArea());
 	}
 }

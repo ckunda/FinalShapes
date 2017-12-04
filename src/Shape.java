@@ -5,9 +5,9 @@ public abstract class Shape {
 
 	public float getArea() { calculateArea(); return area; }
 	public String toString() {
-		String className = this.getClass().getSimpleName();
+		String anyShape = this.getClass().getSimpleName();
 		return String.format("Area of %s with %s is %s.",
-				className, getParmsString(), getArea());
+				anyShape, getParmsString(), getArea());
 	}
 	public abstract void calculateArea();
 	public abstract String getParmsString();
